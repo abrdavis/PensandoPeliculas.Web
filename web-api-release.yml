@@ -1,0 +1,26 @@
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+name: Web API Release
+
+pool: Local Blanco
+
+steps:
+- task: DownloadPipelineArtifact@2
+  inputs:
+    buildType: 'specific'
+    project: $(PIPELINEPROJECTID)
+    definition: '1'
+    artifactName: 'WebApi'
+    pipelineId: $(APIARTIFACTPIPELINEID)
+    targetPath: '$(Pipeline.Workspace)'
+- task: AzureRmWebAppDeployment@5
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: $(AZUREAPISUB)
+    appType: 'webApp'
+    WebAppName: 'pensandoapi'
+    deployToSlotOrASE: true
+    ResourceGroupName: 'pensando-peliculas'
+    SlotName: 'production'
+    packageForLinux: '$(Pipeline.Workspace)/*.zip'
