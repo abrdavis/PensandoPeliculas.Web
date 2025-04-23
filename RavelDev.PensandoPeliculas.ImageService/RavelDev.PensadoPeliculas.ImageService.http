@@ -1,0 +1,6 @@
+@RavelDev.PensadoPeliculas.ImageService_HostAddress = http://localhost:5138
+
+GET {{RavelDev.PensadoPeliculas.ImageService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

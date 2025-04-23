@@ -1,0 +1,6 @@
+@RavelDev.PensandoPeliculas.WebApi_HostAddress = http://localhost:5069
+
+GET {{RavelDev.PensandoPeliculas.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

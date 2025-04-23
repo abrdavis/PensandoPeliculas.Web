@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.35" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="8.0.14" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.3.0" />
+    <PackageReference Include="MySqlConnector" Version="2.3.5" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RavelDev.PensandoPeliculas.Entity\RavelDev.PensandoPeliculas.Entity.csproj" />
+    <ProjectReference Include="..\RavelDev.PensandoPeliculas.Users\RavelDev.PensandoPeliculas.Users.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Auth\JWT\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="RavelDev.Core">
+      <HintPath>..\externalDlls\RavelDev.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
