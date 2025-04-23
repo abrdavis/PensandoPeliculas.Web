@@ -71,7 +71,7 @@ builder.Services.AddAuthentication(x =>
 var services = builder.Services;
 
 var imageUploadConfig = builder.Configuration.GetSection("ImageUploadConfig");
-var connectionString = builder.Configuration["ConnectionStrings:Local"];
+var connectionString = builder.Configuration["pensando-local-cs"];
 
 services.AddScoped<ImageWriter>();
 services.Configure<ImageUploadConfig>(imageUploadConfig);
@@ -85,10 +85,9 @@ builder.Services.AddDbContext<PeliculaDbContext>(options =>
 options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 var app = builder.Build();
+
 app.UseAuthentication();
 app.UseAuthorization();
-
-    
 
 app.UseHttpsRedirection();
 
