@@ -10,6 +10,8 @@ CREATE PROCEDURE `ReviewsGet` (
 )
 BEGIN
 	DECLARE limitValue INT;
+    DECLARE offestValue INT;
+    SET offestValue = COALESCE(resultOffset, 1);
 	SET limitValue = COALESCE(resultCount, 2147483647);
     SELECT *, t.TitleId AS ReviewTitleId 
     FROM
@@ -19,7 +21,8 @@ BEGIN
 		CASE WHEN orderByColumn = '' THEN ReviewId
         WHEN ReviewDate THEN ReviewDate 
         END 
-        LIMIT limitValue;
+        LIMIT limitValue
+        OFFSET offestValue;
 END$$
 
 DELIMITER ;

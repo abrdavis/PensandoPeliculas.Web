@@ -135,7 +135,7 @@ namespace RavelDev.PensandoPeliculas.Core.DataAccess
                     orderByColumn = orderByColumn,
                     resultOffset = resultOffset
                 };
-                result = con.Query<ReviewModel>("ReviewsGet", qParams,  commandType: CommandType.StoredProcedure).ToList();
+                result = con.Query<ReviewModel>(sprocName, qParams,  commandType: CommandType.StoredProcedure)?.ToList();
             }
             return result;
         }

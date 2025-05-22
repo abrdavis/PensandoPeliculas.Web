@@ -43,7 +43,8 @@ builder.Services.AddCors(options =>
                               "http://localhost:5173",
                               "https://postmeta.org",
                               "https://dev.local:8080",
-                             "https://localhost:8080"
+                             "https://localhost:8080",
+                             "https://localhost:4201"
                              )
                               .AllowAnyHeader()
                              .AllowCredentials();

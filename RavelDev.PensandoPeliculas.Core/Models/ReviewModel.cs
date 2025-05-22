@@ -11,7 +11,7 @@ namespace RavelDev.PensandoPeliculas.Core.Models
         public DateTime ReviewDate { get; set; }
         public string ReviewText { get; set; }
         public string ReviewTitle { get; set; }
-        public string ReviewTitleId { get; set; }
+        public int ReviewTitleId { get; set; }
         public decimal ReviewRating { get; set; }
         public string PosterUrl { get; set; }
         public string PosterThumbnailUrl { get;set; }
@@ -20,6 +20,7 @@ namespace RavelDev.PensandoPeliculas.Core.Models
         public string TitleName { get; set; }
         public string Slug { get; set; }
         public string ReviewAuthor { get; set; }
+        public string GenreName { get; set; }
         public DateTime ReleaseDate { get; set; }
 
     }

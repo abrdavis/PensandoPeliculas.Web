@@ -150,7 +150,7 @@ namespace RavelDev.PensandoPeliculas.WebApi.Controllers
             try
             {
                 var reviews = ReviewApi.GetReviews(resultCount, resultOffset, orderBy);
-                return new JsonResult(new { success = true, reviews = reviews });
+                return new JsonResult(reviews);
             }
             catch (Exception ex)
             {

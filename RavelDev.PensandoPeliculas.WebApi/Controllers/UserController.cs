@@ -78,10 +78,19 @@ namespace RavelDev.PensandoPeliculas.WebApi.Controllers
                 //var roles = RoleRepositry.
                 return new JsonResult(new { user = string.Empty, success = true });
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return new JsonResult(new { error = ex.Message });
-            } 
+            }
+        }
+
+        [HttpGet("AuthCheck")]
+        [Authorize]
+        public IActionResult AuthCheck(string permissionType)
+        {
+
+            return new JsonResult(new { success = true });
+
         }
 
         private void SetCookies(AuthenticateResponse authData)
